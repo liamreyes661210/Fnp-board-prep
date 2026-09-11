@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FNP Board Prep - Clinical Practice Platform</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">FNP</div>
+        <div>
+          <div class="brand-title">Board Prep</div>
+          <div class="brand-subtitle">Clinical Practice Platform</div>
+        </div>
+      </div>
+
+      <nav class="nav-group" aria-label="Main navigation">
+        <div class="nav-label">LEARN</div>
+        <button class="nav-item active" data-view="dashboard"><span>◫</span> Dashboard</button>
+        <button class="nav-item" data-view="practice"><span>▶</span> Practice</button>
+        <button class="nav-item" data-view="exam"><span>◷</span> Exam Simulator</button>
+        <button class="nav-item" data-view="bank"><span>▤</span> Question Bank</button>
+        <button class="nav-item" data-view="saved"><span>☆</span> Saved Questions</button>
+
+        <div class="nav-label">ANALYTICS</div>
+        <button class="nav-item" data-view="performance"><span>⌁</span> Performance</button>
+        <button class="nav-item" data-view="weak"><span>!</span> Weak Areas</button>
+        <button class="nav-item" data-view="pearls"><span>◆</span> Clinical Pearls</button>
+
+        <div class="nav-label">ADMIN</div>
+        <button class="nav-item" data-view="review"><span>✓</span> Content Review</button>
+        <button class="nav-item" data-view="settings"><span>⚙</span> Settings</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="progress-mini">
+          <div class="progress-mini-row"><span>Weekly goal</span><strong>68%</strong></div>
+          <div class="bar"><span style="width:68%"></span></div>
+          <small>340 / 500 questions</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="menuBtn" class="icon-btn mobile-only" aria-label="Open menu">☰</button>
+        <div class="search-wrap">
+          <span>⌕</span>
+          <input id="globalSearch" type="search" placeholder="Search topics, conditions, medications..." />
+        </div>
+        <div class="top-actions">
+          <span class="sync-pill">● Demo content</span>
+          <button class="icon-btn" title="Notifications">◔</button>
+          <div class="avatar">TR</div>
+        </div>
+      </header>
+
+      <section id="dashboard" class="view active-view">
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow">FNP BOARD PREP</div>
+            <h1>Good afternoon, Tania</h1>
+            <p>Continue building exam readiness with targeted practice and clinical review.</p>
+          </div>
+          <button class="primary" data-jump="practice">Start practice session</button>
+        </div>
+
+        <div class="stat-grid">
+          <article class="stat-card"><div class="stat-label">Overall accuracy</div><div class="stat-value">78%</div><div class="stat-note positive">↑ 4% vs. last week</div></article>
+          <article class="stat-card"><div class="stat-label">Questions completed</div><div class="stat-value">1,248</div><div class="stat-note">of 2,400 demo items</div></article>
+          <article class="stat-card"><div class="stat-label">Average time</div><div class="stat-value">52s</div><div class="stat-note positive">8s faster</div></article>
+          <article class="stat-card"><div class="stat-label">Exam readiness</div><div class="stat-value">74%</div><div class="stat-note warn">3 weak systems</div></article>
+        </div>
+
+        <div class="two-col">
+          <article class="panel">
+            <div class="panel-header"><div><h2>System mastery</h2><p>Accuracy by clinical category</p></div><button class="link-btn" data-jump="performance">View details</button></div>
+            <div id="masteryList" class="mastery-list"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header"><div><h2>Today's focus</h2><p>Recommended from current weak areas</p></div></div>
+            <div class="focus-card danger-soft">
+              <div class="focus-icon">!</div>
+              <div><strong>Respiratory</strong><p>Asthma classification & COPD differentiation</p><small>62% accuracy · 18 questions due</small></div>
+            </div>
+            <div class="focus-card amber-soft">
+              <div class="focus-icon">Rx</div>
+              <div><strong>Pharmacology</strong><p>Drug interactions & adverse effects</p><small>69% accuracy · 12 questions due</small></div>
+            </div>
+            <div class="focus-card green-soft">
+              <div class="focus-icon">✓</div>
+              <div><strong>Cardiovascular</strong><p>Maintain your momentum</p><small>84% accuracy · 8 review items</small></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="two-col lower">
+          <article class="panel">
+            <div class="panel-header"><div><h2>Recent sessions</h2><p>Your latest practice and exam activity</p></div></div>
+            <table class="data-table">
+              <thead><tr><th>Session</th><th>Mode</th><th>Score</th><th>Date</th></tr></thead>
+              <tbody>
+                <tr><td>Respiratory + Cardio</td><td><span class="chip">Practice</span></td><td><strong>82%</strong></td><td>Today</td></tr>
+                <tr><td>Mixed 50</td><td><span class="chip dark">Exam</span></td><td><strong>76%</strong></td><td>Yesterday</td></tr>
+                <tr><td>Dermatology</td><td><span class="chip">Practice</span></td><td><strong>88%</strong></td><td>Sep 9</td></tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article class="panel source-panel">
+            <div class="panel-header"><div><h2>Source integrity</h2><p>Content governance for medical education</p></div></div>
+            <div class="source-row"><span>PDF-derived items</span><strong>1,200+</strong></div>
+            <div class="source-row"><span>Explanation generated</span><strong class="amber-text">Pending review</strong></div>
+            <div class="source-row"><span>Clinically validated</span><strong class="green-text">Prototype only</strong></div>
+            <div class="notice">This prototype preserves the source material and separates generated explanations from clinically validated content.</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="practice" class="view">
+        <div class="page-heading compact">
+          <div><div class="eyebrow">PRACTICE MODE</div><h1>Adaptive clinical practice</h1><p>Immediate feedback and complete rationale after every answer.</p></div>
+          <div class="heading-actions"><button id="resetPractice" class="secondary">Reset</button><button id="saveCurrent" class="secondary">☆ Save question</button></div>
+        </div>
+
+        <div class="practice-layout">
+          <div class="question-column">
+            <div class="question-toolbar">
+              <div><span id="questionNumber">Question 1 of 10</span><span id="questionSystem" class="chip">Respiratory</span></div>
+              <div class="timer">◷ <span id="practiceTimer">00:00</span></div>
+            </div>
+            <div class="question-progress"><span id="questionProgress"></span></div>
+            <article class="question-card">
+              <div class="question-meta"><span id="difficultyBadge" class="chip amber">Moderate</span><span id="sourceBadge" class="chip outline">PDF source</span></div>
+              <h2 id="questionText"></h2>
+              <div id="options" class="options"></div>
+              <div id="feedback" class="feedback hidden"></div>
+              <div class="question-actions">
+                <button id="prevQuestion" class="secondary">← Previous</button>
+                <button id="nextQuestion" class="primary" disabled>Next question →</button>
+              </div>
+            </article>
+          </div>
+
+          <aside class="session-panel">
+            <h3>Session overview</h3>
+            <div class="session-score"><span id="sessionCorrect">0</span><small>correct</small></div>
+            <div class="session-grid"><div><strong id="sessionAnswered">0</strong><span>Answered</span></div><div><strong id="sessionAccuracy">0%</strong><span>Accuracy</span></div></div>
+            <hr />
+            <h4>Question navigator</h4>
+            <div id="questionNavigator" class="question-nav"></div>
+            <div class="legend"><span><i class="dot current"></i>Current</span><span><i class="dot correct"></i>Correct</span><span><i class="dot incorrect"></i>Incorrect</span></div>
+            <div class="session-tip"><strong>Practice rule</strong><p>Every selection unlocks a full explanation: correct answer, clinical rationale, why each distractor is wrong, and a board pearl.</p></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="exam" class="view">
+        <div class="page-heading"><div><div class="eyebrow">EXAM SIMULATOR</div><h1>Build a board-style exam</h1><p>No explanations are shown until the exam is submitted.</p></div></div>
+        <div class="exam-grid">
+          <article class="panel setup-panel">
+            <h2>Exam setup</h2>
+            <div class="form-group"><label>Exam length</label><div class="segmented" id="examLength"><button class="selected" data-value="25">25</button><button data-value="50">50</button><button data-value="100">100</button><button data-value="150">150</button></div></div>
+            <div class="form-group"><label>Content</label><select id="examContent"><option>Mixed systems</option><option>Weak areas only</option><option>Respiratory</option><option>Cardiovascular</option><option>Pharmacology</option><option>Dermatology</option><option>Women's Health</option></select></div>
+            <div class="form-group"><label>Difficulty</label><select><option>Adaptive mix</option><option>Easy</option><option>Moderate</option><option>Hard</option></select></div>
+            <div class="toggle-row"><div><strong>Timed mode</strong><small>Recommended for board simulation</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+            <div class="toggle-row"><div><strong>Randomize questions</strong><small>Shuffle items and answer order</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+            <div class="toggle-row"><div><strong>Flag for review</strong><small>Allow questions to be marked during exam</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+            <button id="startExam" class="primary full">Start exam simulation</button>
+          </article>
+          <article class="panel exam-preview">
+            <div class="preview-banner">BOARD SIMULATION</div>
+            <h2>Exam behavior</h2>
+            <ul class="check-list"><li>One question displayed at a time</li><li>Answers can be changed before submission</li><li>Questions can be flagged for review</li><li>No rationale during exam mode</li><li>Complete review after submission</li><li>Performance breakdown by system</li></ul>
+            <div class="info-box"><strong>Prototype design</strong><p>The final engine can support AANP-style mixed exams, custom quizzes, timed blocks, and missed-question retakes.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="bank" class="view">
+        <div class="page-heading compact"><div><div class="eyebrow">QUESTION BANK</div><h1>Explore the clinical item library</h1><p>Filter by system, source, review status, and difficulty.</p></div><button class="primary" data-jump="practice">Create custom practice</button></div>
+        <article class="panel">
+          <div class="filter-row"><input id="bankSearch" class="text-input" placeholder="Search questions..." /><select id="bankSystem"><option value="all">All systems</option><option>Respiratory</option><option>Cardiovascular</option><option>Pharmacology</option><option>Dermatology</option><option>Endocrine</option><option>Neurological</option><option>Gastrointestinal</option></select><select><option>All difficulty</option><option>Easy</option><option>Moderate</option><option>Hard</option></select><select><option>All review states</option><option>PDF extracted</option><option>Explanation generated</option><option>Clinically validated</option></select></div>
+          <div id="bankTable"></div>
+        </article>
+      </section>
+
+      <section id="saved" class="view"><div class="page-heading"><div><div class="eyebrow">SAVED</div><h1>Saved questions</h1><p>Review items you marked for later.</p></div></div><div id="savedContainer" class="card-grid"></div></section>
+
+      <section id="performance" class="view">
+        <div class="page-heading"><div><div class="eyebrow">PERFORMANCE</div><h1>Performance analytics</h1><p>See where knowledge is strong, weak, or inconsistent.</p></div></div>
+        <div class="stat-grid"><article class="stat-card"><div class="stat-label">7-day accuracy</div><div class="stat-value">81%</div><div class="stat-note positive">↑ 6%</div></article><article class="stat-card"><div class="stat-label">Questions / day</div><div class="stat-value">48</div><div class="stat-note">7-day average</div></article><article class="stat-card"><div class="stat-label">Strongest system</div><div class="stat-value small">Dermatology</div><div class="stat-note positive">88%</div></article><article class="stat-card"><div class="stat-label">Priority system</div><div class="stat-value small">Respiratory</div><div class="stat-note warn">62%</div></article></div>
+        <div class="two-col"><article class="panel"><h2>Mastery by system</h2><div id="performanceBars"></div></article><article class="panel"><h2>Error patterns</h2><div class="error-item"><span>Misclassification of severity</span><strong>31%</strong></div><div class="error-item"><span>Medication contraindications</span><strong>24%</strong></div><div class="error-item"><span>Next-best-step questions</span><strong>21%</strong></div><div class="error-item"><span>Diagnostic test selection</span><strong>17%</strong></div></article></div>
+      </section>
+
+      <section id="weak" class="view"><div class="page-heading"><div><div class="eyebrow">WEAK AREAS</div><h1>Targeted remediation</h1><p>Topics automatically prioritized by missed questions and confidence.</p></div></div><div id="weakCards" class="card-grid"></div></section>
+
+      <section id="pearls" class="view"><div class="page-heading"><div><div class="eyebrow">CLINICAL PEARLS</div><h1>High-yield board review</h1><p>Fast recall cards derived from the source document.</p></div></div><div id="pearlGrid" class="card-grid"></div></section>
+
+      <section id="review" class="view">
+        <div class="page-heading"><div><div class="eyebrow">CONTENT REVIEW</div><h1>Clinical content governance</h1><p>Separate source extraction, generated teaching content, and clinical validation.</p></div><button class="primary">+ Add reviewer</button></div>
+        <article class="panel">
+          <div class="review-summary"><div><strong>1,200+</strong><span>PDF-derived items</span></div><div><strong>36</strong><span>Prototype items formatted</span></div><div><strong>10</strong><span>Demo questions active</span></div><div><strong>0</strong><span>Clinically signed off</span></div></div>
+          <table class="data-table"><thead><tr><th>Item</th><th>System</th><th>Source</th><th>Explanation</th><th>Clinical review</th></tr></thead><tbody id="reviewTable"></tbody></table>
+        </article>
+        <div class="notice large"><strong>Important production rule:</strong> source statements are preserved as source content. Generated rationales and distractor explanations must be reviewed against current clinical guidelines before publication for professional education.</div>
+      </section>
+
+      <section id="settings" class="view"><div class="page-heading"><div><div class="eyebrow">SETTINGS</div><h1>Learning preferences</h1><p>Configure how practice sessions and feedback behave.</p></div></div><article class="panel settings-panel"><div class="toggle-row"><div><strong>Show rationale immediately in Practice Mode</strong><small>Required for this prototype</small></div><label class="switch"><input type="checkbox" checked disabled><span></span></label></div><div class="toggle-row"><div><strong>Explain every distractor</strong><small>Show why each incorrect option is wrong</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div><div class="toggle-row"><div><strong>Show Board Pearl</strong><small>Display one high-yield takeaway after each answer</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div><div class="toggle-row"><div><strong>Track confidence</strong><small>Add confidence rating before answer submission</small></div><label class="switch"><input type="checkbox"><span></span></label></div></article></section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
