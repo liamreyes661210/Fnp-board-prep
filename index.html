@@ -319,7 +319,7 @@ function startExamEngine(){
   const timed=toggles[0]?.checked??true, randomize=toggles[1]?.checked??true, flagEnabled=toggles[2]?.checked??true;
   let pool=questions.map((q,i)=>({q,i}));
   if(content==='Weak areas only') pool=pool.filter(x=>['Respiratory','Pharmacology','Gastrointestinal'].includes(x.q.system));
-  else if(content!=='Mixed systems') pool=pool.filter(x=>x.q.system===content);
+  else if(!['Mixed systems','AANP FNP mixed systems'].includes(content)) pool=pool.filter(x=>x.q.system===content);
   if(difficulty!=='Adaptive mix') pool=pool.filter(x=>x.q.difficulty===difficulty);
   if(!pool.length){toast('No demo questions match those filters.');return}
   if(randomize) pool=shuffleArray(pool);
