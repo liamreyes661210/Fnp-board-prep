@@ -376,5 +376,27 @@ wireExamSetup();
 $('globalSearch').addEventListener('keydown',e=>{if(e.key==='Enter'){const v=e.target.value.trim();if(v){showView('bank');$('bankSearch').value=v;renderBank()}}});
 
 </script>
-</body>
+
+<!-- FNP BOARD PREP PAYMENT ACCESS -->
+<a id="fnp-payment-button"
+   href="https://buy.stripe.com/test_9B6aEX6T2eUdf2mgvs7N600"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="
+     position:fixed;
+     right:24px;
+     bottom:24px;
+     z-index:99999;
+     background:#16202a;
+     color:white;
+     padding:14px 22px;
+     border-radius:10px;
+     text-decoration:none;
+     font-weight:700;
+     font-family:Inter,Arial,sans-serif;
+     box-shadow:0 8px 24px rgba(0,0,0,.20);
+   ">
+   Subscribe · $50/month
+</a>
+\n</body>
 </html>
